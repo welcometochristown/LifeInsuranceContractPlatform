@@ -65,9 +65,7 @@ namespace API.Controllers
                 if (a == null)
                     throw new InvalidOperationException($"No {nameof(Advisor)} with id {id} exists.");
 
-                var n = new Advisor(a);
-
-                return Ok(n);
+                return Ok(new Advisor(a));
 
             }
             catch (Exception ex)
