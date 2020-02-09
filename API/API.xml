@@ -1,0 +1,220 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>API</name>
+    </assembly>
+    <members>
+        <member name="M:API.Controllers.AdvisorController.#ctor(API.Models.Data.Context.EntityDbContext,Microsoft.Extensions.Logging.ILogger{API.Controllers.AdvisorController})">
+            <summary>
+            AdvisorController Constructor 
+            </summary>
+            <param name="context"></param>
+            <param name="logger"></param>
+        </member>
+        <member name="M:API.Controllers.AdvisorController.Get">
+            <summary>
+            Get all advisors
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.AdvisorController.Get(System.Int32)">
+            <summary>
+            Get an advisor with {id}
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.AdvisorController.Create(API.Models.Pocos.Advisor)">
+            <summary>
+            Create a new advisor
+            </summary>
+            <param name="a"></param>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.AdvisorController.Update(API.Models.Pocos.Advisor)">
+            <summary>
+            Update an existing advisor
+            </summary>
+            <param name="a"></param>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.AdvisorController.Delete(System.Int32)">
+            <summary>
+            Delete an advisor with {id}
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.CarrierController.#ctor(API.Models.Data.Context.EntityDbContext,Microsoft.Extensions.Logging.ILogger{API.Controllers.CarrierController})">
+            <summary>
+            CarrierController Constructor
+            </summary>
+            <param name="context"></param>
+            <param name="logger"></param>
+        </member>
+        <member name="M:API.Controllers.CarrierController.Get">
+            <summary>
+            Get all Carriers
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.CarrierController.Get(System.Int32)">
+            <summary>
+            Get a Carrier with {id}
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.CarrierController.Create(API.Models.Pocos.Carrier)">
+            <summary>
+            Create a new Carrier
+            </summary>
+            <param name="a"></param>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.CarrierController.Update(API.Models.Pocos.Carrier)">
+            <summary>
+            Update an existing Carrier
+            </summary>
+            <param name="a"></param>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.CarrierController.Delete(System.Int32)">
+            <summary>
+            Delete an advisor with {id}
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ContractController.#ctor(API.Models.Data.Context.EntityDbContext,Microsoft.Extensions.Logging.ILogger{API.Controllers.ContractController})">
+            <summary>
+            ContractController Constructor
+            </summary>
+            <param name="context"></param>
+            <param name="logger"></param>
+        </member>
+        <member name="M:API.Controllers.ContractController.Get">
+            <summary>
+            Get all Contracts
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ContractController.Get(System.Int32,System.Int32)">
+            <summary>
+            Get a Contract between {entity1Id} and {entity2Id}
+            </summary>
+            <param name="entity1Id"></param>
+            <param name="entity2Id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ContractController.Create(System.Int32,System.Int32)">
+            <summary>
+            Creates a Contract between {entity1Id} and {entity2Id}
+            </summary>
+            <param name="entity1Id"></param>
+            <param name="entity2Id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ContractController.Delete(System.Int32,System.Int32)">
+            <summary>
+            Terminate a Contract between {entity1Id} and {entity2Id}
+            </summary>
+            <param name="entity1Id"></param>
+            <param name="entity2Id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ContractController.SmallestChain(System.Int32,System.Int32)">
+            <summary>
+            Finds the smallest Contract chain between {entity1Id} and {entity2Id}
+            </summary>
+            <param name="entity1Id"></param>
+            <param name="entity2Id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.EntitiesController.#ctor(API.Models.Data.Context.EntityDbContext,Microsoft.Extensions.Logging.ILogger{API.Controllers.AdvisorController})">
+            <summary>
+            EntitiesController Constructor
+            </summary>
+            <param name="context"></param>
+            <param name="logger"></param>
+        </member>
+        <member name="M:API.Controllers.EntitiesController.Get">
+            <summary>
+            Gets all entities
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.EntitiesController.Get(System.Int32)">
+            <summary>
+            Gets an entity with {id}
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.EntitiesController.Delete(System.Int32)">
+            <summary>
+            Delete an entity with {id}
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:API.Controllers.MGAController.#ctor(API.Models.Data.Context.EntityDbContext,Microsoft.Extensions.Logging.ILogger{API.Controllers.MGAController})">
+            <summary>
+            MGAController Constructor
+            </summary>
+            <param name="context"></param>
+            <param name="logger"></param>
+        </member>
+        <member name="M:API.Controllers.MGAController.Get">
+            <summary>
+            Get all MGAs
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.MGAController.Get(System.Int32)">
+            <summary>
+            Gets an MGA with {id}
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.MGAController.Create(API.Models.Pocos.MGA)">
+            <summary>
+            Create a new MGA
+            </summary>
+            <param name="a"></param>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.MGAController.Update(API.Models.Pocos.MGA)">
+            <summary>
+            Update an existing MGA
+            </summary>
+            <param name="a"></param>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.MGAController.Delete(System.Int32)">
+            <summary>
+            Delete an MGA with {id}
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:API.Models.Data.Context.EntityDbContext.Initialize(System.IServiceProvider)">
+            <summary>
+            Initialise with test data
+            </summary>
+            <param name="serviceProvider"></param>
+        </member>
+        <member name="M:API.Models.Data.Context.EntityDbContext.OnConfiguring(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder)">
+            <summary>
+            Configure dbContext
+            </summary>
+            <param name="optionsBuilder"></param>
+        </member>
+        <member name="M:API.Models.Data.Context.EntityDbContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <summary>
+            Create dbContext model entities
+            </summary>
+            <param name="modelBuilder"></param>
+        </member>
+    </members>
+</doc>
