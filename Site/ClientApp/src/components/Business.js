@@ -141,6 +141,10 @@ class Business extends Component {
         this.contractListElement.current.showModal(business);
     }
 
+    onCreateBusiness() {
+        this.onEditBusiness({});
+    }
+
     onEditBusiness(business) {
         this.businessEditElement.current.showModal(business);
     }
@@ -201,7 +205,13 @@ class Business extends Component {
 
                         )}
                     </tbody>
-                  
+                    <tfoot>
+                        <tr>
+                            <td colSpan={7}>
+                                <Button color="primary" onClick={this.onCreateBusiness.bind(this)}>New {this.state.type}</Button>
+                            </td>
+                        </tr>
+                    </tfoot>
                 </table>
 
                 <BusinessEditModal ref={this.businessEditElement} onSubmit={this.onEditBusinessSubmit.bind(this)} />

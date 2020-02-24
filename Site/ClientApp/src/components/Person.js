@@ -150,6 +150,10 @@ class Person extends Component {
         this.contractListElement.current.showModal(person);
     }
 
+    onCreatePerson() {
+        this.onEditPerson({});
+    }
+
     onEditPerson(person) {
         this.personEditElement.current.showModal(person);
     }
@@ -223,7 +227,13 @@ class Person extends Component {
                             )}
                         
                     </tbody>
-
+                    <tfoot>
+                        <tr>
+                            <td colSpan={7}>
+                                <Button color="primary" onClick={this.onCreatePerson.bind(this)}>New {this.state.type}</Button>
+                            </td>
+                        </tr>
+                    </tfoot>
              
                 </table>
                
