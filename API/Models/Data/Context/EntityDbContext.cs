@@ -25,22 +25,34 @@ namespace API.Models.Data.Context
             using (var context = new EntityDbContext(
                 serviceProvider.GetRequiredService<DbContextOptions<EntityDbContext>>()))
             {
-
-                for (int i = 0; i < 10; i++)
+                var advisors = new[]
                 {
-                    var advisor = new Advisor() { FirstName = "AdvisorZ"+i.ToString(), LastName = "", Address = "133 Orange Lane", PhoneNumber = "(647) 5555 4425" };
-                    var carrier = new Carrier() { BusinessName = "CarrierX" + i.ToString(), BusinessAdress = "123 Purple Street", BusinessPhoneNumber = "(647) 5555 1234" };
-                    var mga = new MGA() { BusinessName = "MGAY" + i.ToString(), BusinessAdress = "789 Green Road", BusinessPhoneNumber = "(647) 5555 5556" };
+                    new Advisor() { FirstName = "John", LastName = "Smith", Address = "133 Orange Lane", PhoneNumber = "(647) 555 4425" },
+                    new Advisor() { FirstName = "David", LastName = "Peterson", Address = "155 Yellow Road", PhoneNumber = "(647) 555 4425" },
+                    new Advisor() { FirstName = "John", LastName = "Smith", Address = "33 Maroon Marsh", PhoneNumber = "(647) 555 4425" }
+                };
 
-                    //add entities
-                    context.Advisors.Add(advisor);
-                    context.Carriers.Add(carrier);
-                    context.MGAs.Add(mga);
+                var carriers = new[]
+                {
+                    new Carrier() { BusinessName = "State Farm", BusinessAddress = "1 Purple Street", BusinessPhoneNumber = "(647) 555 1234" },
+                    new Carrier() { BusinessName = "GEICO", BusinessAddress = "99 Red Lane", BusinessPhoneNumber = "(647) 555 1234" },
+                    new Carrier() { BusinessName = "AlState", BusinessAddress = "5534 Blue Bay", BusinessPhoneNumber = "(647) 555 1234" }
+                };
 
-                    //add contracts
-                    context.Contracts.Add(new Contract { Entity1 = carrier, Entity2 = mga }); // CarrierX-MGAY
-                    context.Contracts.Add(new Contract { Entity1 = mga, Entity2 = advisor }); // MGAY-AdvisorZ
-                }
+                var mgas = new[]
+                {
+                    new MGA() { BusinessName = "Techno Insurance", BusinessAddress = "87 Mauve  Street", BusinessPhoneNumber = "(647) 555 1234" },
+                    new MGA() { BusinessName = "Big Insure", BusinessAddress = "1139 Brown Bay", BusinessPhoneNumber = "(647) 555 1234" },
+                    new MGA() { BusinessName = "Special Insurance Co.", BusinessAddress = "13 Green Grove", BusinessPhoneNumber = "(647) 555 1234" }
+                };
+
+                context.Advisors.AddRange(advisors);
+                context.Carriers.AddRange(carriers);
+                context.MGAs.AddRange(mgas);
+
+                context.Contracts.Add(new Contract { Entity1 = advisors[0], Entity2 = carriers[0] }); 
+                context.Contracts.Add(new Contract { Entity1 = carriers[1], Entity2 = mgas[1] });
+                context.Contracts.Add(new Contract { Entity1 = carriers[2], Entity2 = advisors[2] });
 
                 //save changes
                 context.SaveChanges();

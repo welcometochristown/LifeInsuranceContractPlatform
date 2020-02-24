@@ -30,3 +30,7 @@ code {
 .nav-link-blue {
     color: blue !important;
 }
+
+.jumbotron {
+    max-height: 300px;
+}

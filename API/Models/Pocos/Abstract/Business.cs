@@ -14,12 +14,12 @@ namespace API.Models.Pocos.Abstract
                 return;
             
             this.BusinessName = b.BusinessName;
-            this.BusinessAdress = b.BusinessAdress;
+            this.BusinessAddress = b.BusinessAddress;
             this.BusinessPhoneNumber = b.BusinessPhoneNumber;
         }
 
         public string BusinessName { get; set; }
-        public string BusinessAdress { get; set; }
+        public string BusinessAddress { get; set; }
         public string BusinessPhoneNumber { get; set; }
 
         public override string ToString()

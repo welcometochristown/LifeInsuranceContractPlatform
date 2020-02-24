@@ -89,7 +89,7 @@ namespace API.Controllers
                 var newentry = new Models.Data.Carrier
                 {
                     BusinessName = a.BusinessName,
-                    BusinessAdress = a.BusinessAdress,
+                    BusinessAddress = a.BusinessAddress,
                     BusinessPhoneNumber = a.BusinessPhoneNumber,
                 };
 
@@ -125,7 +125,7 @@ namespace API.Controllers
 
                 //update Carrier fields
                 item.BusinessName = a.BusinessName;
-                item.BusinessAdress = a.BusinessAdress;
+                item.BusinessAddress = a.BusinessAddress;
                 item.BusinessPhoneNumber = a.BusinessPhoneNumber;;
 
                 //save database
