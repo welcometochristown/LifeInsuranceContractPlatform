@@ -10,7 +10,7 @@ using API.Models.Data.Context;
 namespace API.Controllers
 {
     [ApiController]
-    [Route("Contract")]
+    [Route("api/Contract")]
     public class ContractController : ControllerBase
     {
         private readonly ILogger<ContractController> _logger;
@@ -52,7 +52,7 @@ namespace API.Controllers
         /// <param name="entity2Id"></param>
         /// <returns></returns>
         [HttpGet()]
-        [Route("/Contract/{entity1Id}/{entity2Id}")]
+        [Route("/api/Contract/{entity1Id}/{entity2Id}")]
         public IActionResult Get(int entity1Id, int entity2Id)
         {
             try
@@ -79,7 +79,7 @@ namespace API.Controllers
         /// <param name="entity2Id"></param>
         /// <returns></returns>
         [HttpPut]
-        [Route("/Contract/Establish/{entity1Id}/{entity2Id}")]
+        [Route("/api/Contract/Establish/{entity1Id}/{entity2Id}")]
         public IActionResult Create(int entity1Id, int entity2Id)
         {
             try
@@ -116,7 +116,7 @@ namespace API.Controllers
         /// <param name="entity2Id"></param>
         /// <returns></returns>
         [HttpDelete()]
-        [Route("/Contract/Terminate/{entity1Id}/{entity2Id}")]
+        [Route("/api/Contract/Terminate/{entity1Id}/{entity2Id}")]
         public IActionResult Delete(int entity1Id, int entity2Id)
         {
             try
@@ -148,7 +148,7 @@ namespace API.Controllers
         /// <param name="entity2Id"></param>
         /// <returns></returns>
         [HttpGet]
-        [Route("/Contract/SmallestChain/{entity1Id}/{entity2Id}")]
+        [Route("/api/Contract/SmallestChain/{entity1Id}/{entity2Id}")]
         public IActionResult SmallestChain(int entity1Id, int entity2Id)
         {
             try

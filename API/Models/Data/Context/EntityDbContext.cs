@@ -26,18 +26,21 @@ namespace API.Models.Data.Context
                 serviceProvider.GetRequiredService<DbContextOptions<EntityDbContext>>()))
             {
 
-                var advisor = new Advisor() { FirstName = "AdvisorZ", LastName = "", Address = "133 Orange Lane", PhoneNumber = "(647) 5555 4425" };
-                var carrier = new Carrier() { BusinessName = "CarrierX", BusinessAdress = "123 Purple Street", BusinessPhoneNumber = "(647) 5555 1234" };
-                var mga = new MGA() { BusinessName = "MGAY", BusinessAdress = "789 Green Road", BusinessPhoneNumber = "(647) 5555 5556" };
+                for (int i = 0; i < 10; i++)
+                {
+                    var advisor = new Advisor() { FirstName = "AdvisorZ"+i.ToString(), LastName = "", Address = "133 Orange Lane", PhoneNumber = "(647) 5555 4425" };
+                    var carrier = new Carrier() { BusinessName = "CarrierX" + i.ToString(), BusinessAdress = "123 Purple Street", BusinessPhoneNumber = "(647) 5555 1234" };
+                    var mga = new MGA() { BusinessName = "MGAY" + i.ToString(), BusinessAdress = "789 Green Road", BusinessPhoneNumber = "(647) 5555 5556" };
 
-                //add entities
-                context.Advisors.Add(advisor);
-                context.Carriers.Add(carrier);
-                context.MGAs.Add(mga);
+                    //add entities
+                    context.Advisors.Add(advisor);
+                    context.Carriers.Add(carrier);
+                    context.MGAs.Add(mga);
 
-                //add contracts
-                context.Contracts.Add(new Contract { Entity1 = carrier, Entity2 = mga }); // CarrierX-MGAY
-                context.Contracts.Add(new Contract { Entity1 = mga, Entity2 = advisor }); // MGAY-AdvisorZ
+                    //add contracts
+                    context.Contracts.Add(new Contract { Entity1 = carrier, Entity2 = mga }); // CarrierX-MGAY
+                    context.Contracts.Add(new Contract { Entity1 = mga, Entity2 = advisor }); // MGAY-AdvisorZ
+                }
 
                 //save changes
                 context.SaveChanges();

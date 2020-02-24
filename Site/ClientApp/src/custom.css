@@ -1,0 +1,32 @@
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+code {
+  color: #E01A76;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.logo {
+    background-image: url('https://www.apexa.ca/hs-fs/hubfs/Apexa%20-%202017%20-%20Theme/images/Apexa-Home.jpg?width=1922&name=Apexa-Home.jpg');
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 50%;
+    background-size: cover;
+    background-repeat:no-repeat;
+}
+
+.nav-link {
+    color: white !important;
+}
+
+.nav-link-blue {
+    color: blue !important;
+}

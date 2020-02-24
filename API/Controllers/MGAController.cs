@@ -12,7 +12,7 @@ using API.Models.Data.Context;
 namespace API.Controllers
 {
     [ApiController]
-    [Route("MGA")]
+    [Route("api/MGA")]
     public class MGAController : ControllerBase
     {
         private readonly ILogger<MGAController> _logger;

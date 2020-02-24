@@ -12,7 +12,7 @@ using API.Models.Pocos;
 namespace API.Controllers
 {
     [ApiController]
-    [Route("Entities")]
+    [Route("api/Entities")]
     public class EntitiesController : ControllerBase
     {
         private readonly ILogger<AdvisorController> _logger;

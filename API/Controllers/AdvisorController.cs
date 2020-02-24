@@ -12,7 +12,7 @@ using API.Models.Data.Context;
 namespace API.Controllers
 {
     [ApiController]
-    [Route("Advisor")]
+    [Route("api/Advisor")]
     public class AdvisorController : ControllerBase
     {
         private readonly ILogger<AdvisorController> _logger;
