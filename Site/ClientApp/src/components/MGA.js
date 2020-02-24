@@ -82,6 +82,7 @@ export class MGA extends Component {
                 deleteBusiness={this.deleteMGA}
                 createContract={this.createContract}
                 deleteContract={this.deleteContract}
+                type={MGA.displayName}
             />;
 
         return (

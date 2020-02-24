@@ -83,6 +83,7 @@ export class Carrier extends Component {
                 deleteBusiness={this.deleteCarrier}
                 createContract={this.createContract}
                 deleteContract={this.deleteContract}
+                type={Carrier.displayName}
             />;
 
         return (

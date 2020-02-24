@@ -8,7 +8,7 @@ function EntityDropdown(props) {
 
     return (
         <ButtonDropdown isOpen={dropdownOpen} toggle={toggle}>
-            <DropdownToggle color='primary' caret>
+            <DropdownToggle color='info' caret>
                 Actions
            </DropdownToggle>
             <DropdownMenu>

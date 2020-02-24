@@ -109,7 +109,8 @@ class Person extends Component {
             createContract: props.createContract,
             deleteContract: props.deleteContract,
 
-            entities : null
+            entities: null,
+            type : props.type
         }
 
         this.contractListElement = React.createRef();
@@ -206,7 +207,7 @@ class Person extends Component {
                                 <td>{person.address}</td>
                                 <td>{person.phoneNumber}</td>
                                 <td>
-                                    <NavLink className="nav-link-blue" key={person.id} href="#" onClick={this.onViewContracts.bind(this, person)}>{person.contracts.length} Contract(s)</NavLink>
+                                    <Button color="link" key={person.id} href="#" onClick={this.onViewContracts.bind(this, person)}>{person.contracts.length} Contract(s)</Button>
                                 </td>
                                 <td>
                                     <EntityDropdown
@@ -222,6 +223,8 @@ class Person extends Component {
                             )}
                         
                     </tbody>
+
+             
                 </table>
                
 

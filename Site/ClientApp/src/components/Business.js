@@ -97,7 +97,10 @@ class Business extends Component {
             deleteBusiness: props.deleteBusiness,
 
             createContract: props.createContract,
-            deleteContract: props.deleteContract
+            deleteContract: props.deleteContract,
+
+            entities :null,
+            type: props.type
         }
 
         this.contractListElement = React.createRef();
@@ -188,7 +191,7 @@ class Business extends Component {
                                 <td>{business.businessAddress}</td>
                                 <td>{business.businessPhoneNumber}</td>
                                 <td>
-                                    <NavLink className="nav-link-blue" key={business.id} href="#" onClick={this.onViewContracts.bind(this, business)}>{business.contracts.length} Contract(s)</NavLink>
+                                    <Button color="link" key={business.id} href="#" onClick={this.onViewContracts.bind(this, business)}>{business.contracts.length} Contract(s)</Button>
                                 </td>
                                 <td>
                                     <EntityDropdown key={business.id} edit={this.onEditBusiness.bind(this, business)} delete={this.onDeleteBusiness.bind(this, business)} create={this.onCreateContract.bind(this, business)} />
@@ -198,6 +201,7 @@ class Business extends Component {
 
                         )}
                     </tbody>
+                  
                 </table>
 
                 <BusinessEditModal ref={this.businessEditElement} onSubmit={this.onEditBusinessSubmit.bind(this)} />

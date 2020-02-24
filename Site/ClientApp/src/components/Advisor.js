@@ -94,6 +94,7 @@ export class Advisor extends Component {
                 deletePerson={this.deleteAdvisor}
                 createContract={this.createContract}
                 deleteContract={this.deleteContract}
+                type={Advisor.displayName}
             />;
         return (
             <div>
