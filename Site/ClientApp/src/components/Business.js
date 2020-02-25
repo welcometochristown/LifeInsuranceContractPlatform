@@ -188,7 +188,7 @@ class Business extends Component {
     renderBusinessTable(businesses) {
         return (
             <div>
-                <table className='table table-striped' aria-labelledby="tabelLabel">
+                <table className='table table-striped' style={{ backgroundColor: 'white' }} aria-labelledby="tabelLabel">
                     <thead>
                         <tr>
                             <th>Business Name</th>

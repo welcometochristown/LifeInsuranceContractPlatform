@@ -14,16 +14,16 @@ export class Layout extends Component {
 
 
     render() {
-   
-    return (
-        <div className="logo" >
+
+        return (
+        <div className="logo">
             <Container className="container-fluid" fluid={true} style={{ padding: "20px", margin: "20px" }}>
                 <Row>
                 <Col>
                     <img src="/img/apexa_logo.PNG" alt="apexa" />
                 </Col>
                 <Col> 
-                <Navbar variant="light" className="justify-content-end">
+                <Navbar className="justify-content-end">
                     <Nav>
                         <NavItem>
                             <NavLink href="/">Home</NavLink>
@@ -46,10 +46,11 @@ export class Layout extends Component {
                 </Row>
             </Container>
             
-        <Container>
-          {this.props.children}
-        </Container>
-      </div>
+            <Container>
+              {this.props.children}
+            </Container>
+
+        </div>
     );
   }
 }

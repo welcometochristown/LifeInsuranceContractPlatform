@@ -199,7 +199,7 @@ class Person extends Component {
         return (
             <div>
                
-                <table className='table table-striped' aria-labelledby="tabelLabel">
+                <table className='table table-striped table-whitebackground' style={{ backgroundColor: 'white' }} aria-labelledby="tabelLabel">
                     <thead>
                         <tr>
                             <th>First Name</th>
