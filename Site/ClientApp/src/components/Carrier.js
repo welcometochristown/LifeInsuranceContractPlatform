@@ -14,6 +14,18 @@ export class Carrier extends Component {
         this.loadCarriers();
     }
 
+    async createCarrier(carrier) {
+        await fetch('https://localhost:44363/api/carrier/', {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify(carrier)
+        });
+        this.loadCarriers();
+    }
+
     async editCarrier(carrier) {
         await fetch('https://localhost:44363/api/carrier/', {
             method: 'POST',
@@ -79,11 +91,12 @@ export class Carrier extends Component {
             ? <p><em>Loading...</em></p>
             : <Business
                 businesses={this.state.carriers}
-                editBusiness={this.editCarrier}
-                deleteBusiness={this.deleteCarrier}
-                createContract={this.createContract}
-                deleteContract={this.deleteContract}
-                type={Carrier.displayName}
+                createBusiness={this.createCarrier.bind(this)}
+                editBusiness={this.editCarrier.bind(this)}
+                deleteBusiness={this.deleteCarrier.bind(this)}
+                createContract={this.createContract.bind(this)}
+                deleteContract={this.deleteContract.bind(this)}
+                type="Carrier"
             />;
 
         return (

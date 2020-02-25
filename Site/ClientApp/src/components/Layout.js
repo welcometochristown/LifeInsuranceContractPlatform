@@ -14,9 +14,9 @@ export class Layout extends Component {
 
 
     render() {
-
+   
     return (
-        <div className="logo">
+        <div className="logo" >
             <Container className="container-fluid" fluid={true} style={{ padding: "20px", margin: "20px" }}>
                 <Row>
                 <Col>

@@ -8,11 +8,25 @@ export class MGA extends Component {
     constructor(props) {
         super(props);
         this.state = { mgas: [], loading: true };
+
     }
 
     componentDidMount() {
         this.loadMGAs();
     }
+
+    async createMGA(mga) {
+        await fetch('https://localhost:44363/api/mga', {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify(mga)
+        });
+        this.loadMGAs();
+    }
+
 
     async editMGA(mga) {
         await fetch('https://localhost:44363/api/mga', {
@@ -74,15 +88,17 @@ export class MGA extends Component {
     }
 
     render() {
+
         let contents = this.state.loading
             ? <p><em>Loading...</em></p>
             : <Business
                 businesses={this.state.mgas}
-                editBusiness={this.editMGA}
-                deleteBusiness={this.deleteMGA}
-                createContract={this.createContract}
-                deleteContract={this.deleteContract}
-                type={MGA.displayName}
+                createBusiness={this.createMGA.bind(this)}
+                editBusiness={this.editMGA.bind(this)}
+                deleteBusiness={this.deleteMGA.bind(this)}
+                createContract={this.createContract.bind(this)}
+                deleteContract={this.deleteContract.bind(this)}
+                type="MGA"
             />;
 
         return (

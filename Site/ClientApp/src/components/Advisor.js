@@ -8,23 +8,28 @@ export class Advisor extends Component {
     constructor(props) {
         super(props);
         this.state = { advisors: [], loading: true };
-
-        this.loadAdvisors = this.loadAdvisors.bind(this);
-
-        this.editAdvisor = this.editAdvisor.bind(this);
-        this.deleteAdvisor = this.deleteAdvisor.bind(this);
-
-        this.createContract = this.createContract.bind(this);
-        this.deleteContract = this.deleteContract.bind(this);
     }
 
     componentDidMount() {
         this.loadAdvisors();
     }
 
+    async createAdvisor(advisor) {
+
+        await fetch('https://localhost:44363/api/advisor/', {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify(advisor)
+        });
+        this.loadAdvisors();
+    }
+
     async editAdvisor(advisor) {
 
-        const response = await fetch('https://localhost:44363/api/advisor/', {
+        await fetch('https://localhost:44363/api/advisor/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -32,7 +37,6 @@ export class Advisor extends Component {
             },
             body: JSON.stringify(advisor)
         });
-
         this.loadAdvisors();
     }
 
@@ -79,7 +83,6 @@ export class Advisor extends Component {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
             }
-
         });
         this.loadAdvisors();
     }
@@ -90,12 +93,14 @@ export class Advisor extends Component {
             ? <p><em>Loading...</em></p>
             : <Person
                 people={this.state.advisors}
-                editPerson={this.editAdvisor}
-                deletePerson={this.deleteAdvisor}
-                createContract={this.createContract}
-                deleteContract={this.deleteContract}
-                type={Advisor.displayName}
+                createPerson={this.createAdvisor.bind(this)}
+                editPerson={this.editAdvisor.bind(this)}
+                deletePerson={this.deleteAdvisor.bind(this)}
+                createContract={this.createContract.bind(this)}
+                deleteContract={this.deleteContract.bind(this)}
+                type="Advisor"
             />;
+
         return (
             <div>
                 <Jumbotron fluid>

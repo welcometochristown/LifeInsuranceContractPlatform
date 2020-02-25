@@ -93,6 +93,7 @@ class Business extends Component {
         this.state = {
             businesses: props.businesses,
 
+            createBusiness: props.createBusiness,
             editBusiness: props.editBusiness,
             deleteBusiness: props.deleteBusiness,
 
@@ -141,8 +142,14 @@ class Business extends Component {
         this.contractListElement.current.showModal(business);
     }
 
+
     onCreateBusiness() {
-        this.onEditBusiness({});
+        this.onEditBusiness(
+            {
+                businessName: '',
+                businessAddress: '',
+                businessPhoneNumber: '',
+            });
     }
 
     onEditBusiness(business) {
@@ -158,7 +165,10 @@ class Business extends Component {
     }
 
     onEditBusinessSubmit(business) {
-        this.state.editBusiness(business);
+        if (business.id)
+            this.state.editBusiness(business);
+        else
+            this.state.createBusiness(business);
     }
 
     onCreateContractSubmit(business, id) {
@@ -171,7 +181,7 @@ class Business extends Component {
 
     componentWillReceiveProps(nextProps) {
         this.setState({
-            business: nextProps.business,
+            businesses: nextProps.businesses,
         });
     }
 

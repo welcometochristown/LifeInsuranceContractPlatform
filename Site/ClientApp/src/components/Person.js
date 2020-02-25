@@ -104,6 +104,7 @@ class Person extends Component {
             people: props.people,
 
             editPerson: props.editPerson,
+            createPerson: props.createPerson,
             deletePerson: props.deletePerson,
 
             createContract: props.createContract,
@@ -151,11 +152,18 @@ class Person extends Component {
     }
 
     onCreatePerson() {
-        this.onEditPerson({});
+        this.onEditPerson(
+            {
+                firstName: '',
+                lastName: '',
+                address: '',
+                phoneNumber: '',
+                healthStatus: ''
+            });
     }
 
     onEditPerson(person) {
-        this.personEditElement.current.showModal(person);
+       this.personEditElement.current.showModal(person);
     }
 
     onDeletePerson(person) {
@@ -167,7 +175,10 @@ class Person extends Component {
     }
 
     onEditPersonSubmit(person) {
-       this.state.editPerson(person);
+        if (person.id)
+            this.state.editPerson(person);
+        else
+            this.state.createPerson(person);
     }
 
     onCreateContractSubmit(person, id) {
@@ -185,7 +196,6 @@ class Person extends Component {
     }
 
     renderPersonTable(people) {
-
         return (
             <div>
                
