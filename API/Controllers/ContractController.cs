@@ -162,6 +162,15 @@ namespace API.Controllers
                 if (e2 == null)
                     throw new InvalidOperationException($"No entity exists with id {entity2Id}");
 
+                //check for a direct connection between e1 and e2, if so we dont need to search
+                if (_context.Contracts.Any(n => (n.Entity1 == e1 && n.Entity2 == e2) || (n.Entity1 == e2 && n.Entity2 == e1)))
+                {
+                    return Ok(new[] {
+                        new EntitySimple() {  ID = e1.ID, Name = e1.ToString() },
+                        new EntitySimple() {  ID = e2.ID, Name = e2.ToString() }
+                    });
+                }
+
                 Dictionary<Models.Data.Entity, Tuple<Models.Data.Entity, int>> nodemap = new Dictionary<Models.Data.Entity, Tuple<Models.Data.Entity, int>>(); // this will keep track of all nodes, their parent and how long it took to get there
 
                 Models.Data.Entity last = null;
